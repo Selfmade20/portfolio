@@ -199,3 +199,6 @@
     }
   }
   
+.button_icon {
+    display: inline-flex;
+}
