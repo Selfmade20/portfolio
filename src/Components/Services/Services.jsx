@@ -101,7 +101,7 @@ const Services = () => {
         <div className="services__content">
             <div>
                 <i className='uil uil-mobile-android services__icon'></i>
-                <h3 className="services__title">Application <br/> Developer</h3>
+                <h3 className="services__title">Cybersecurity <br/> Analyst</h3>
             </div>
 
             <span className="services__button" onClick={() => toggleTab(3)}>View More 
@@ -111,7 +111,7 @@ const Services = () => {
             <div className={toggleState === 3 ? "services__modal active-modal" : "services__modal"}>
                 <div className="services__modal-content">
                     <i onClick={() => toggleTab(0)} className="uil uil-times services__modal-close"></i>
-                    <h3 className="services__modal-title">Mobile Application Developer</h3>
+                    <h3 className="services__modal-title">Cybersecurity Analyst</h3>
                     <p className="services__modal-description">Services with more than 3 years of professional experience, providing quality work to clients and companies</p>
 
                     <ul className="services__modal-services grid">

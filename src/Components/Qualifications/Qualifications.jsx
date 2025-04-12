@@ -100,19 +100,31 @@ const Qualifications = () => {
         <span className="qualification__rounder"></span>
         <span className="qualification__line">  </span>
     </div>
-    <div>
+<div>
         <h3 className="qualification__title">Web Developer Intern</h3>
         <span className="qualification__subtitle">HexSoftwares - Remote</span>
         <div className="qualification__calender">
             <i className="uil uil-calendar-alt"></i> 2025 - 2025
         </div>
+    </div>  
+
+      
+</div>
+    <div className="qualification__data">
+        <div>
+            <h3 className="qualification__title">Full Stack Developer</h3>
+            <span className="qualification__subtitle">ProtoCare PTY LTD - Remote</span>
+        <div className="qualification__calender">
+            <i className="uil uil-calendar-alt"></i> 2025 - Present
+        </div>
+    </div>
+        <div>
+            <span className="qualification__rounder"></span>
+            <span className="qualification__line"></span>
+        </div>
     </div>
 </div>
-
-
-            </div>
-
-        </div>
+</div>
 
     </div>
    </section>
