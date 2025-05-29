@@ -1,6 +1,6 @@
 import Work1 from '../../Components/Assets/work3.jpg'
 import Work2 from '../../Components/Assets/work1.jpg'
-
+import todo from '../../Components/Assets/todo.jpg'
 export const projectsData = [ 
 
     {
@@ -12,8 +12,8 @@ export const projectsData = [
 
     {
         id: 2,
-        image: Work2,
-        title: "Hotel Booking Website",
+        image: todo,
+        title: "To Do List App",
         category: "web"
     },
 ];

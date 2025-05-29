@@ -1,4 +1,12 @@
 import React from 'react'
+import { FaNodeJs } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
+import { DiMsqlServer } from "react-icons/di";
+import { IoLogoFirebase } from "react-icons/io5";
+import { SiMongodb } from "react-icons/si";
+import { TbSql } from "react-icons/tb";
+
+
 
 const Backend = () => {
   return (
@@ -9,7 +17,7 @@ const Backend = () => {
 
     <div className="skills_group">
     <div className="skills_data">
-        <i class="bx bx-badge-check"></i>
+        <FaNodeJs />
         <div>
             <h3 className="skills_name">Node JS</h3>
             <span className="skills_level">Intermediate</span>
@@ -17,7 +25,7 @@ const Backend = () => {
     </div>
 
     <div className="skills_data">
-        <i class="bx bx-badge-check"></i>
+        <FaPython />
         <div>
             <h3 className="skills_name">Python</h3>
             <span className="skills_level">Beginner</span>
@@ -25,21 +33,21 @@ const Backend = () => {
     </div>
 
     <div className="skills_data">
-        <i class="bx bx-badge-check"></i>
+        <TbSql />
         <div>
             <h3 className="skills_name">MySQL</h3>
             <span className="skills_level">Intermediate</span>
         </div>
     </div>
     <div className="skills_data">
-        <i class="bx bx-badge-check"></i>
+        <SiMongodb />
         <div>
             <h3 className="skills_name">MongoDB</h3>
             <span className="skills_level">Intermediate</span>
         </div>
     </div>
     <div className="skills_data">
-        <i class="bx bx-badge-check"></i>
+        <IoLogoFirebase />
         <div>
             <h3 className="skills_name">Firebase</h3>
             <span className="skills_level">Beginner</span>
@@ -47,9 +55,9 @@ const Backend = () => {
     </div>
 
     <div className="skills_data">
-        <i class="bx bx-badge-check"></i>
+        <DiMsqlServer />
         <div>
-            <h3 className="skills_name">SQL</h3>
+            <h3 className="skills_name">MSSQL</h3>
             <span className="skills_level">Intermediate</span>
         </div>
     </div>
