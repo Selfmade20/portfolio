@@ -34,21 +34,21 @@ const Services = () => {
                         <li className="services__modal-service">
                             <i className="uil uil-check-circle services__modal-icon"></i>
                             <p className="services__modal-info">
-                                I Develop User Interfaces.
+                                Building User Interfaces (UIs).
                             </p>
                         </li>
 
                         <li className="services__modal-service">
                             <i className="uil uil-check-circle services__modal-icon"></i>
                             <p className="services__modal-info">
-                               I Develop Webpages.
+                               Ensuring Cross-Browser and Device Compatibility.
                             </p>
                         </li>
 
                         <li className="services__modal-service">
                             <i className="uil uil-check-circle services__modal-icon"></i>
                             <p className="services__modal-info">
-                                I Deploy and run your Websites Live.
+                                Improving User Experience (UX).
                             </p>
                         </li>
                     </ul>
@@ -76,21 +76,21 @@ const Services = () => {
                         <li className="services__modal-service">
                             <i className="uil uil-check-circle services__modal-icon"></i>
                             <p className="services__modal-info">
-                                I develop API and Intergration.
+                                Managing Databases and APIs.
                             </p>
                         </li>
 
                         <li className="services__modal-service">
                             <i className="uil uil-check-circle services__modal-icon"></i>
                             <p className="services__modal-info">
-                                Handle Authentification and Authorization.
+                                Implementing Server-Side Logic.
                             </p>
                         </li>
 
                         <li className="services__modal-service">
                             <i className="uil uil-check-circle services__modal-icon"></i>
                             <p className="services__modal-info">
-                                Database Development.
+                                Ensuring Security and Performance.
                             </p>
                         </li>
                     </ul>
