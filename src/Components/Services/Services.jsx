@@ -50,6 +50,9 @@ const Services = () => {
                             <p className="services__modal-info">
                                 Improving User Experience (UX).
                             </p>
+                            <p>
+                                Enhance usability and accessibility by implementing smooth navigation, animations, loading states, and responsive design principles.
+                            </p>
                         </li>
                     </ul>
                 </div>
