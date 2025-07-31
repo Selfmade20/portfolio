@@ -5,6 +5,7 @@
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
@@ -34,6 +35,10 @@
     color: var(--title-color);
     font-weight: var(--font-medium);
     transition: .3s;
+    /* Ensure minimum touch target */
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
 }
 
 .nav_icon,
@@ -45,10 +50,16 @@
 .active-link,
 .nav_link:hover {
     color: var(--title-color-dark);
-
 }
 
-@media screen and (max-width: 768px){
+/* Enhanced responsive design */
+@media screen and (max-width: 992px) {
+    .nav_list {
+        column-gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .header {
         top: initial;
         bottom: 0;
@@ -56,6 +67,7 @@
 
     .nav {
         height: var(--header-height);
+        padding: 0 1rem;
     }
 
     .nav_menu {
@@ -82,7 +94,6 @@
 
     .nav_icon {
         font-size: 1.2rem;
-
     }
 
     .nav_close {
@@ -92,33 +103,90 @@
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--title-color);
+        /* Ensure minimum touch target */
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav_close:hover {
         color: var(--title-color-dark);
     }
 
-
     .nav_toggle {
         font-size: 1.1rem;
         cursor: pointer;
+        /* Ensure minimum touch target */
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav_icon,
     .nav_close,
     .nav_toggle {
         display: block;
-
     }
 }
 
+@media screen and (max-width: 576px) {
+    .nav_menu {
+        padding: 2rem 1rem 4rem;
+    }
 
-@media screen and (max-width: 350px){
+    .nav_list {
+        gap: 1.5rem;
+    }
+
+    .nav_icon {
+        font-size: 1.1rem;
+    }
+
+    .nav_close {
+        right: 1rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
     .nav_menu {
         padding: 2rem 0.25rem 4rem;
     }
 
     .nav_list {
         column-gap: 0;
+        gap: 1rem;
+    }
+
+    .nav_icon {
+        font-size: 1rem;
+    }
+
+    .nav_close {
+        right: 0.75rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* Additional mobile improvements */
+@media screen and (max-width: 768px) {
+    .nav_link {
+        font-size: var(--smaller-font-size);
+        padding: 0.5rem;
+    }
+
+    .nav_logo {
+        font-size: var(--normal-font-size);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav_link {
+        font-size: var(--tiny-font-size);
+        padding: 0.25rem;
     }
 }

@@ -42,50 +42,135 @@
 .about_description {
     padding: 0 4rem 0 0;
     margin-bottom: var(--mb-2-5);
-
+    line-height: 1.6;
 }
 
-@media screen and (max-width: 992px){
-  .about_container {
-    grid-template-columns: 1fr;
-    row-gap: 2.5rem;
-  }
-  
-  .about_img {
-    width: 220px;
-  }
+/* Enhanced responsive design */
+@media screen and (max-width: 1200px) {
+    .about_container {
+        column-gap: 3rem;
+    }
 
-  .about_box {
-    padding: 0.75rem 0.5rem;
-  }
-
-  .about_data {
-    text-align: center;
-  }
-
-  .about_info {
-    justify-content: center;
-  }
-
-  .about_description {
-    padding: 0 5rem;
-    margin-bottom: 2rem;
-  }
+    .about_img {
+        width: 320px;
+    }
 }
 
+@media screen and (max-width: 992px) {
+    .about_container {
+        grid-template-columns: 1fr;
+        row-gap: 2.5rem;
+    }
+    
+    .about_img {
+        width: 220px;
+    }
 
-  @media screen and (max-width: 576px){
+    .about_box {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .about_data {
+        text-align: center;
+    }
+
+    .about_info {
+        justify-content: center;
+    }
+
+    .about_description {
+        padding: 0 5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about_container {
+        row-gap: 2rem;
+    }
+
+    .about_img {
+        width: 200px;
+    }
+
+    .about_description {
+        padding: 0 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about_info {
+        gap: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
     .about_info {
         grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
+
     .about_description {
         padding: 0;
+        text-align: center;
     }
-  }
-  
-  @media screen and (max-width: 350px){
+
+    .about_img {
+        width: 180px;
+    }
+
+    .about_box {
+        padding: 0.5rem 0.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
     .about_info {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
-  }
+
+    .about_img {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .about_info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .about_img {
+        width: 140px;
+    }
+
+    .about_box {
+        padding: 0.25rem 0.125rem;
+    }
+
+    .about_icon {
+        font-size: 1.25rem;
+    }
+
+    .about_title {
+        font-size: var(--tiny-font-size);
+    }
+
+    .about_subtitle {
+        font-size: var(--tiny-font-size);
+    }
+}
+
+/* Additional mobile improvements */
+@media screen and (max-width: 768px) {
+    .about_icon {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .about_icon {
+        font-size: 1.1rem;
+    }
+}
   

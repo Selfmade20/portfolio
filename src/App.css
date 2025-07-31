@@ -48,6 +48,7 @@
   --z-fixed: 100;
   --z-modal: 1000;
 
+  /* Responsive typography */
   @media screen and (max-width: 992px) {
     :root {
       --big-font-size: 2.75rem;
@@ -61,6 +62,45 @@
     } 
   }
 
+  @media screen and (max-width: 768px) {
+    :root {
+      --big-font-size: 2.25rem;
+      --h1-font-size: 1.25rem;
+      --h2-font-size: 1.125rem;
+      --h3-font-size: 0.938rem;
+      --normal-font-size: 0.875rem;
+      --small-font-size: 0.75rem;
+      --smaller-font-size: 0.688rem;
+      --tiny-font-size: 0.563rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    :root {
+      --big-font-size: 2rem;
+      --h1-font-size: 1.125rem;
+      --h2-font-size: 1rem;
+      --h3-font-size: 0.875rem;
+      --normal-font-size: 0.813rem;
+      --small-font-size: 0.688rem;
+      --smaller-font-size: 0.625rem;
+      --tiny-font-size: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    :root {
+      --big-font-size: 1.75rem;
+      --h1-font-size: 1rem;
+      --h2-font-size: 0.938rem;
+      --h3-font-size: 0.813rem;
+      --normal-font-size: 0.75rem;
+      --small-font-size: 0.625rem;
+      --smaller-font-size: 0.563rem;
+      --tiny-font-size: 0.438rem;
+    }
+  }
+}
 
 * {
   margin: 0;
@@ -83,8 +123,9 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
 }
-
 
 h1,h2,h3 {
   color: var(--title-color);
@@ -104,11 +145,15 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  /* Ensure minimum touch target size */
+  min-height: 44px;
+  min-width: 44px;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .section {
@@ -135,6 +180,7 @@ img {
   max-width: 968px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1rem;
 }
 
 .grid {
@@ -149,6 +195,11 @@ img {
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
+  /* Ensure minimum touch target */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:hover {
@@ -164,10 +215,18 @@ img {
   align-items: center;
 }
 
-@media screen and (max-width: 992px){
+/* Enhanced responsive breakpoints */
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 992px) {
   .container {
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
+    max-width: 95%;
   }
   
   .button {
@@ -178,10 +237,13 @@ img {
     width: 22px;
     height: 22px;
   }
+
+  .section {
+    padding: 4rem 0 2rem;
+  }
 }
 
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   body {
     margin: 0 0 var(--header-height) 0;
   }
@@ -193,13 +255,41 @@ img {
   .section_subtitle {
     margin-bottom: var(--mb-3);
   }
+
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+    padding: 0 0.5rem;
+  }
+
+  .button {
+    padding: 0.875rem 1.5rem;
+    font-size: var(--small-font-size);
+  }
 }
 
-@media screen and (max-width: 576px){
-  
+@media screen and (max-width: 576px) {
+  .container {
+    margin-left: var(--mb-0-5);
+    margin-right: var(--mb-0-5);
+    padding: 0 0.25rem;
+  }
+
+  .section {
+    padding: 1.5rem 0 3rem;
+  }
+
+  .button {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--smaller-font-size);
+  }
+
+  .grid {
+    gap: 1rem;
+  }
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 350px) {
   :root {
     --big-font-size: 2.25rem
   }
@@ -207,7 +297,42 @@ img {
   .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
+    padding: 0 0.125rem;
+  }
+
+  .button {
+    padding: 0.625rem 1rem;
+    font-size: var(--tiny-font-size);
   }
 }
 
+/* Additional responsive utilities */
+@media screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media screen and (max-width: 768px) {
+  button, 
+  .button,
+  a[role="button"] {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Prevent text overflow on small screens */
+@media screen and (max-width: 576px) {
+  h1, h2, h3, p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }

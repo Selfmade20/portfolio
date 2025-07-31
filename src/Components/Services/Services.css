@@ -11,7 +11,6 @@
     padding: 6rem 0 2rem 2.5rem;
 }
 
-
 .services__icon {
     display: block;
     font-size: 2rem;
@@ -32,6 +31,9 @@
     align-items: center;
     column-gap: 0.25rem;
     cursor: pointer;
+    /* Ensure minimum touch target */
+    min-height: 44px;
+    min-width: 44px;
 }
 
 .services__button-icon {
@@ -66,6 +68,8 @@
     background-color: var(--container-color);
     padding: 4.5rem 2.5rem 2.5rem ;
     border-radius: 1.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .services__modal-close {
@@ -75,6 +79,12 @@
     font-size: 1.5rem;
     color: var(--title-color);
     cursor: pointer;
+    /* Ensure minimum touch target */
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .services__modal-title,
@@ -114,23 +124,34 @@
 }
 
 /* Active Modal */
-
 .active-modal {
     opacity: 1;
     visibility: visible;
 }
 
+/* Enhanced responsive design */
+@media screen and (max-width: 1200px) {
+    .services__container {
+        grid-template-columns: repeat(3, 240px);
+        column-gap: 1.5rem;
+    }
+}
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 992px) {
     .services__container {
         grid-template-columns: repeat(3, 218px);
     }
-  }
-  
-  
-  @media screen and (max-width: 768px){
+
+    .services__modal-content {
+        width: 450px;
+        padding: 4rem 2rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .services__container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .services__content {
@@ -140,19 +161,58 @@
     .services__icon {
         font-size: 1.5rem;
     }
-  }
-  
-  @media screen and (max-width: 576px){
+
     .services__modal-content {
-        padding: 4.5rem 1.5rem 2.5rem;
+        width: 90%;
+        max-width: 400px;
+        padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .services__modal-description {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .services__container {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .services__modal-content {
+        width: 95%;
+        padding: 3rem 1rem 1.5rem;
+        margin: 1rem;
     }
 
     .services__modal-description {
         padding: 0;
     }
-  }
-  
-  @media screen and (max-width: 350px){
+
+    .services__modal-close {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services__container {
+        max-width: 100%;
+    }
+
+    .services__content {
+        padding: 3rem 0.25rem 1rem 1rem;
+    }
+
+    .services__modal-content {
+        width: 98%;
+        padding: 2.5rem 0.75rem 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
     .services__container {
         grid-template-columns: max-content;
     }
@@ -160,5 +220,28 @@
     .services__content {
         padding-right: 6rem;
     }
-  }
+
+    .services__modal-content {
+        padding: 2rem 0.5rem 1rem;
+    }
+
+    .services__modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Additional mobile improvements */
+@media screen and (max-width: 768px) {
+    .services__button {
+        font-size: var(--smaller-font-size);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .services__button {
+        font-size: var(--tiny-font-size);
+    }
+}
   

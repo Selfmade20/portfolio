@@ -33,6 +33,7 @@
 .skills_data {
     display: flex;
     column-gap: 0.5rem;
+    align-items: center;
 }
 
 .skills .bx-badge-check {
@@ -50,31 +51,110 @@
     font-size: var(--tiny-font-size);
 }
 
-
-@media screen and (max-width: 992px){
- .skills_container {
-    grid-template-columns: max-content;
-    row-gap: 2rem;
- }
+/* Enhanced responsive design */
+@media screen and (max-width: 1200px) {
+    .skills_container {
+        grid-template-columns: repeat(2, 300px);
+        column-gap: 2rem;
+    }
 }
 
-  @media screen and (max-width: 576px){
+@media screen and (max-width: 992px) {
+    .skills_container {
+        grid-template-columns: max-content;
+        row-gap: 2rem;
+    }
+
+    .skills_content {
+        padding: 1.75rem 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .skills_container {
         grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .skills_content {
+        padding: 1.5rem 2rem;
+    }
+
+    .skills_box {
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills_container {
+        grid-template-columns: 1fr;
+        max-width: 100%;
     }
 
     .skills_content {
         padding: 1.5rem;
     }
-  }
-  
-  @media screen and (max-width: 350px){
+
+    .skills_box {
+        column-gap: 1.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .skills_group {
+        row-gap: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills_content {
+        padding: 1.25rem;
+    }
+
+    .skills_box {
+        gap: 1rem;
+    }
+
+    .skills_data {
+        column-gap: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
     .skills_box {
         column-gap: 1.25rem;
+        gap: 1rem;
     }
 
     .skills_name {
         font-size: var(--small-font-size);
     }
-  }
+
+    .skills_content {
+        padding: 1rem;
+    }
+
+    .skills_title {
+        font-size: var(--small-font-size);
+        margin-bottom: var(--mb-1);
+    }
+}
+
+/* Additional mobile improvements */
+@media screen and (max-width: 768px) {
+    .skills .bx-badge-check {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills .bx-badge-check {
+        font-size: 0.8rem;
+    }
+
+    .skills_name {
+        font-size: var(--small-font-size);
+    }
+}
   
