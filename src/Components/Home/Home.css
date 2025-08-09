@@ -71,24 +71,133 @@
     background-size: cover;
     width: 300px;
     height: 300px;
-    box-shadow: inset 0 0 0 9px rgb(225 225 225 / 30%);
     order: 1;
     justify-self: center;
-    animation: profile_animate 8s ease-in-out infinite 1s;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 8px rgba(102, 126, 234, 0.1),
+        0 0 0 16px rgba(102, 126, 234, 0.05),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 16px 64px rgba(102, 126, 234, 0.2);
+    animation: profile_animate 6s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
+.home_img::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    background: linear-gradient(45deg, 
+        rgba(102, 126, 234, 0.3),
+        rgba(118, 75, 162, 0.3),
+        rgba(102, 126, 234, 0.1),
+        rgba(118, 75, 162, 0.3)
+    );
+    border-radius: 50%;
+    z-index: -1;
+    animation: profile_glow_ring 8s ease-in-out infinite;
+    filter: blur(20px);
+}
+
+.home_img::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(135deg, 
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    z-index: -1;
+    animation: profile_shimmer 3s ease-in-out infinite;
+}
+
+/* Combined floating and glowing animation */
 @keyframes profile_animate {
-    0% {
-        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 
+            0 0 0 8px rgba(102, 126, 234, 0.1),
+            0 0 0 16px rgba(102, 126, 234, 0.05),
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            0 16px 64px rgba(102, 126, 234, 0.2);
     }
-
+    25% {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 
+            0 0 0 8px rgba(102, 126, 234, 0.15),
+            0 0 0 16px rgba(102, 126, 234, 0.08),
+            0 8px 32px rgba(0, 0, 0, 0.12),
+            0 16px 64px rgba(102, 126, 234, 0.3);
+    }
     50% {
-        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 
+            0 0 0 8px rgba(102, 126, 234, 0.2),
+            0 0 0 16px rgba(102, 126, 234, 0.1),
+            0 8px 32px rgba(0, 0, 0, 0.15),
+            0 16px 64px rgba(102, 126, 234, 0.4),
+            0 0 40px rgba(102, 126, 234, 0.3);
     }
+    75% {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 
+            0 0 0 8px rgba(102, 126, 234, 0.18),
+            0 0 0 16px rgba(102, 126, 234, 0.09),
+            0 8px 32px rgba(0, 0, 0, 0.13),
+            0 16px 64px rgba(102, 126, 234, 0.35);
+    }
+}
 
-    100% {
-        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+/* Glowing ring animation */
+@keyframes profile_glow_ring {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1) rotate(0deg);
     }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1) rotate(180deg);
+    }
+}
+
+/* Shimmer effect */
+@keyframes profile_shimmer {
+    0%, 100% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: rotate(180deg);
+    }
+}
+
+/* Hover effects */
+.home_img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 0 8px rgba(102, 126, 234, 0.3),
+        0 0 0 16px rgba(102, 126, 234, 0.15),
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 16px 64px rgba(102, 126, 234, 0.5),
+        0 0 60px rgba(102, 126, 234, 0.4);
+}
+
+.home_img:hover::before {
+    animation-play-state: paused;
+}
+
+.home_img:hover::after {
+    animation-play-state: paused;
 }
 
 .home_scroll {
@@ -141,7 +250,7 @@
 @media screen and (max-width: 992px) {
     .home_content {
         grid-template-columns: 100px repeat(2, 1fr);
-        column-gap: 1.25rem;
+        column-gap: 1rem;
     }
 
     .home_hand {
@@ -167,7 +276,7 @@
     .home_img {
         width: 250px;
         height: 250px;
-        box-shadow: inset 0 0 0 8px rgb(225 225 225 / 30%);
+        animation: profile_animate 6s ease-in-out infinite;
     }
 
     .home_scroll {
@@ -179,12 +288,14 @@
     .home_content {
         grid-template-columns: 0.5fr 3fr;
         padding-top: 3.5rem;
-        gap: 1rem;
     }
 
     .home_img {
         order: initial;
         justify-self: initial;
+        width: 200px;
+        height: 200px;
+        animation: profile_animate 6s ease-in-out infinite;
     }
 
     .home_data {
@@ -192,9 +303,8 @@
     }
 
     .home_img {
-        box-shadow: inset 0 0 0 6px rgb(225 225 225 / 30%);
-        width: 200px;
-        height: 200px;
+        order: -1;
+        justify-self: center;
     }
 
     .home_scroll {
@@ -202,12 +312,12 @@
     }
 
     .home_subtitle {
-        padding-left: 3rem;
+        padding-left: 0;
+        text-align: center;
     }
 
     .home_subtitle::before {
-        width: 35px;
-        top: 0.7rem;
+        display: none;
     }
 }
 
@@ -226,7 +336,7 @@
     .home_img {
         width: 180px;
         height: 180px;
-        margin: 0 auto;
+        animation: profile_animate 6s ease-in-out infinite;
     }
 
     .home_subtitle {
@@ -248,6 +358,7 @@
     .home_img {
         width: 160px;
         height: 160px;
+        animation: profile_animate 6s ease-in-out infinite;
     }
 
     .home_hand {
