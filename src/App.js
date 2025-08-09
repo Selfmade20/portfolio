@@ -9,6 +9,7 @@ import Scrollup from './Components/Scrollup/Scrollup';
 import Services from './Components/Services/Services';
 import Skills from './Components/Skills/Skills';
 import Work from './Components/Work/Work';
+import Chatbot from './Components/Chatbot/Chatbot';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       </main>
       <Footer/>
       <Scrollup />
+      <Chatbot />
     </div>
   );
 }
